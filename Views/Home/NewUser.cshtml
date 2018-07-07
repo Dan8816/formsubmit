@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "NewUser Page";
+}
+@using formsubmit.Models
+@model User
+
+<h3>Enter Your Information</h3>
+        <form asp-action="Create" asp-controller="Home" method="post"><!--This action method will metch a name in the specified controller-->
+            <div class="form-group">
+                <span asp-validation-for="First_Name"></span><!--These are placed to render error messages-->
+                <label asp-for="First_Name">First Name:</label><!--These are direct references to members of specified model class-->
+            <input type="text" name="First_Name"class="form-control">
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="Last_Name"></span><!--These are placed to render error messages-->
+                <label asp-for="Last_Name">Last Name:</label><!--These are direct references to members of specified model class-->
+                <input type="text" name="Last_Name"class="form-control">
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="Age"></span><!--These are placed to render error messages-->
+                <label asp-for="Age">Age:</label><!--These are direct references to members of specified model class-->
+                <input type="text"  name="age" class="form-control">
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="Email"></span><!--These are placed to render error messages-->
+                <label asp-for="Email">Email:</label><!--These are direct references to members of specified model class-->
+                <input type="email"  name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="Password"></span><!--These are placed to render error messages-->
+                <label asp-for="Password">Password:</label><!--These are direct references to members of specified model class-->
+                <input asp-for="Password" type="password" name="password">
+            </div>
+            <input type="submit" class="btn btn-default" value="Add User">
+          </form>
